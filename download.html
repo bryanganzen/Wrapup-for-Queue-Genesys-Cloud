@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Descargar Wrap-up Codes</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: #fffcfb;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #f15a22;
+        }
+        .table-container {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            word-wrap: break-word;
+        }
+        th {
+            background-color: #f15a22;
+            color: white;
+        }
+        a, .button {
+            display: inline-block;
+            margin-bottom: 10px;
+            background-color: #f15a22;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            text-align: center;
+        }
+        a:hover, .button:hover {
+            background-color: #e04d18;
+        }
+        .logo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 35%;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            th, td {
+                font-size: 0.9em;
+                padding: 6px;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="logo_organizacion_aqui" alt="Logo">
+    </div>
+    <div class="container">
+        <h1>Wrap-up Codes Encontrados</h1>
+        <div class="table-container">
+            {{ table_html|safe }}
+        </div>
+        <a href="{{ url_for('download_file', filename=filename) }}" class="button">Descargar Wrap-up Codes en Excel</a>
+        <a href="{{ url_for('index') }}" class="button">Cargar Nuevo Archivo</a>
+    </div>
+</body>
+</html>
